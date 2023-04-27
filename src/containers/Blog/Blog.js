@@ -18,10 +18,10 @@ class Blog extends Component {
                 const updatedPosts = posts.map(post => {
                     return {
                         ...post,
-                        autor: 'Max'
+                        author: 'Max'
                     }
                 });
-                this.setState({posts: response.data});
+                this.setState({posts: updatedPosts});
                 //console.log(response);
             } );
         }
