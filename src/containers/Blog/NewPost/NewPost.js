@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+
 import './NewPost.css';
 
 class NewPost extends Component {
@@ -9,6 +10,10 @@ class NewPost extends Component {
         author: 'Max'
     }
 
+    componentDidMount () {
+        console.log(this.props);
+    }
+
     postDataHandler = () => {
         const data = {
             title: this.state.title,
@@ -16,9 +21,9 @@ class NewPost extends Component {
             author: this.state.author
         };
         axios.post('/posts', data)
-        .then(response => {
-            console.log(response);
-        });
+            .then(response => {
+                console.log(response);
+            });
     }
 
     render () {
